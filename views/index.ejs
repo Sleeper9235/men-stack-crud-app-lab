@@ -9,6 +9,20 @@
   </head>
   <body>
     <h1>Welcome to the Planets app!</h1>
-    <p>An app for keeping track of planets.</p>
+
+    <%- include('./partials/nav') %> 
+    <div id="subTitle">
+        <% if (Planets === 1) { %>
+            <h2>Planet</h2>
+        <% } else { %>
+            <h2>Planets</h2>
+        <% } %>
+    </div>
+    <div id="planetList">
+        <% Planets.forEach((planet, index) => { %>
+            <h3><a href="/planets/<%= index %>"><%= planet.name %></a></h3>
+        <% }) %> 
+    </div>
+    <footer>An app for keeping track of planets.</footer>
   </body>
 </html>

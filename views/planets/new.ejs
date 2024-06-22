@@ -9,20 +9,35 @@
   </head>
   <body>
     <h1>Add a new Planet!</h1>
-    <form action="" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name" />
+    <%- include('../partials/nav') %>  
+    <div id="form">
+      <form action="/planets" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" />
 
-        <label for="type">Type:</label>
-        <input type="text" name="type" id="type" />
+          <label for="planetType">Type:</label>
+          <select name="planetType" id="type">
 
-        <label for="size">Size:</label>
-        <input type="text" name="size" id="size" />
+            <!-- <%# Planets.forEach((planet) => { %>
+            <option value="<%#= planet.planetType %>"><%#= planet.planetType %></option>
+              <%# }) %>  -->
 
-        <label for="isPlanetHabitable">Is the planet habitable?</label>
-        <input type="checkbox" name="isPlanetHabitable" id="isPlanetHabitable" />
+            <option value="Terrestrial">Terrestrial</option>
+            <option value="Gas Giant">Gas Giant</option>
+            <option value="Ice Giant">Ice Giant</option>
+            <option value="Dwarf">Dwarf</option>
+           
+          </select>
 
-        <button type="submit">Add Planet</button>
-    </form>
+          <label for="size">Size:(in miles)</label>
+          <input type="number" name="size" id="size" />
+
+          <label for="planetIsHabitable">Is the planet habitable?</label>
+          <input type="checkbox" name="planetIsHabitable" id="planetIsHabitable" />
+
+          <button type="submit">Add Planet</button>
+      </form>
+    </div>
+    <footer>An app for keeping track of planets.</footer>
   </body>
 </html>

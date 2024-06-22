@@ -1,9 +1,10 @@
 const mongoose = require('mongoose')
 
+
 const planetSchema = new mongoose.Schema({
     name: String,
-    type: String,
-    size: String,
+    planetType: String,
+    size: Number,
     planetIsHabitable: Boolean,
 })
 

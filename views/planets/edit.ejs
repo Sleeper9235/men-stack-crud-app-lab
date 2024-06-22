@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planets App</title>
+  </head>
+  <body>
+    <h1>Welcome to <%= planet.name %>'s page!</h1>
+
+    <%- include('../partials/nav') %> 
+
+    <h2><%= planet.name %></h2>
+    <ul>
+        <li>Type: <%= planet.planetType %></li>
+        <li>Size: <%= planet.size %> miles %></li>
+        <li>Habitable: <%= planet.planetIsHabitable === true ? "We can live there" : "We cannot live there" %></li>
+    </ul>
+
+    <form action="/planets/<%= planetIndex %>" method="post">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="planetType">Type:</label>
+      <input type="text" name="planetType" id="planetType" />
+
+      <label for="size">Size:(in miles)</label>
+      <input type="number" name="size" id="size" />
+
+      <label for="planetIsHabitable">Is the planet habitable?</label>
+      <input type="checkbox" name="planetIsHabitable" id="planetIsHabitable" />
+
+      <button type="submit">Update</button>
+  </form>
+
+    <footer>An app for keeping track of planets.</footer>
+  </body>
+</html>

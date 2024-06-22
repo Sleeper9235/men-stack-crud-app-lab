@@ -9,13 +9,59 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}`)
 })
 
-app.get('/planets', async (req, res) => {
-    res.render('index.ejs')
+const Planet = require('./models/planet.js')
+
+
+
+app.use(express.urlencoded({ extended: false }))
+
+app.get('/', async (req, res) => {
+    const allPlanets = await Planet.find({})
+    res.render('index.ejs', {
+        Planets: allPlanets,
+    })
 })
 
 app.get('/planets/new', async (req, res) => {
-    res.render('./planets/new.ejs')
+    const allPlanets = await Planet.find({})
+    res.render('./planets/new.ejs', {
+        Planets: allPlanets,
+    })
 })
+
+app.post('/planets', async (req, res) => {
+    if (req.body.planetIsHabitable === "on") {
+        req.body.planetIsHabitable = true
+    } else {
+        req.body.planetIsHabitable = false
+    }
+    await Planet.create(req.body)
+    console.log(req.body)
+    res.redirect('/planets/new')
+})
+
+app.get('/planets/:id', async (req, res) => {
+    const planetIndex = req.params.id
+    const planets = await Planet.find({})
+    res.render('planets/id.ejs', {
+        planet: planets[planetIndex],
+        planetIndex: planetIndex
+    }) 
+})
+
+app.get('/planets/:id/edit', async (req, res) => {
+    const planetIndex = req.params.id
+    const planets = await Planet.find({})
+    res.render('planets/edit.ejs', {
+        planet: planets[planetIndex],
+        planetIndex: planetIndex
+    })
+})
+
+app.put('/planets/:id', async (req, res) => {
+
+})
+
 
 
 app.listen(3000, () => {
