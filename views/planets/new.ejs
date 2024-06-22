@@ -1,14 +1,28 @@
-<!-- views/index.ejs -->
+<!-- views/planets/new.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Planets App</title>
+    <title>Create a planet!</title>
   </head>
   <body>
     <h1>Add a new Planet!</h1>
-    <p>An app for keeping track of planets.</p>
+    <form action="" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" />
+
+        <label for="type">Type:</label>
+        <input type="text" name="type" id="type" />
+
+        <label for="size">Size:</label>
+        <input type="text" name="size" id="size" />
+
+        <label for="isPlanetHabitable">Is the planet habitable?</label>
+        <input type="checkbox" name="isPlanetHabitable" id="isPlanetHabitable" />
+
+        <button type="submit">Add Planet</button>
+    </form>
   </body>
 </html>

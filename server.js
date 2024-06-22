@@ -9,11 +9,13 @@ mongoose.connection.on("connected", () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}`)
 })
 
-app.get('/', async (req, res) => {
+app.get('/planets', async (req, res) => {
     res.render('index.ejs')
 })
 
-
+app.get('/planets/new', async (req, res) => {
+    res.render('./planets/new.ejs')
+})
 
 
 app.listen(3000, () => {
