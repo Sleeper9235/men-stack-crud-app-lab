@@ -17,18 +17,22 @@
         <li>Habitable: <%= planet.planetIsHabitable === true ? "We can live there" : "We cannot live there" %></li>
     </ul>
 
-    <form action="/planets/<%= planetIndex %>" method="post">
+    <form action="/planets/<%= planet._id %>?_method=PUT" method="POST">
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" />
+      <input type="text" name="name" id="name" value="<%= planet.name %>"/>
 
       <label for="planetType">Type:</label>
-      <input type="text" name="planetType" id="planetType" />
+      <input type="text" name="planetType" id="planetType" value="<%= planet.planetType %>" />
 
       <label for="size">Size:(in miles)</label>
-      <input type="number" name="size" id="size" />
+      <input type="number" name="size" id="size" value="<%= planet.size %>"/>
 
       <label for="planetIsHabitable">Is the planet habitable?</label>
-      <input type="checkbox" name="planetIsHabitable" id="planetIsHabitable" />
+      <input type="checkbox" name="planetIsHabitable" id="planetIsHabitable" 
+      <% if (planet.planetIsHabitable) { %>
+        checked
+        <% } %> 
+      />
 
       <button type="submit">Update</button>
   </form>
