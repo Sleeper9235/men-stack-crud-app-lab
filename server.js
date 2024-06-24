@@ -36,8 +36,17 @@ app.get('/planets', async (req, res) => {
 // GET /planets/new
 app.get('/planets/new', async (req, res) => {
     const allPlanets = await Planet.find({})
+    let uniquePlanetTypes = [];
+    let planetTypes = {}
+    allPlanets.forEach((planet) => {
+        if (!planetTypes[planet.planetType]) {
+            uniquePlanetTypes.push(planet.planetType)
+            planetTypes[planet.planetType] = true
+        }
+})
     res.render('./planets/new.ejs', {
         Planets: allPlanets,
+        uniquePlanetTypes: uniquePlanetTypes,
     })
 })
 

@@ -18,16 +18,9 @@
           <label for="planetType">Type:</label>
           <select name="planetType" id="type">
 
-            <!-- <% /* %>
-           <% Planets.forEach((planet) => { %>
-            <option value="<%= planet.planetType %>"><%= planet.planetType %></option>
-              <% }) %>
-            <% */ %> -->
-
-            <option value="Terrestrial">Terrestrial</option>
-            <option value="Gas Giant">Gas Giant</option>
-            <option value="Ice Giant">Ice Giant</option>
-            <option value="Dwarf">Dwarf</option>
+           <% uniquePlanetTypes.forEach((planetType) => { %>
+            <option value="<%= planetType %>"><%= planetType %></option>
+            <% }) %>
            
           </select>
 
