@@ -1,4 +1,4 @@
-<!-- views/index.ejs -->
+<!-- views/planets/index.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +10,8 @@
   <body>
     <h1>Welcome to the Planets app!</h1>
 
-    <%- include('./partials/nav') %> 
-    <!-- <div id="subTitle">
+    <%- include('../partials/nav') %> 
+    <div id="subTitle">
         <% if (Planets === 1) { %>
             <h2>Planet</h2>
         <% } else { %>
@@ -21,7 +21,7 @@
     <div id="planetList">
         <% Planets.forEach((planet, index) => { %>
             <h3><a href="/planets/<%= planet._id %>"><%= planet.name %></a></h3>
-        <% }) %>  -->
+        <% }) %> 
     </div>
     <footer>An app for keeping track of planets.</footer>
   </body>

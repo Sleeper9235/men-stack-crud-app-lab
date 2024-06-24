@@ -26,6 +26,13 @@ app.get('/', async (req, res) => {
         Planets: allPlanets,
     })
 })
+//GET /Planet
+app.get('/planets', async (req, res) => {
+    const allPlanets = await Planet.find({})
+    res.render('./planets/index.ejs', {
+        Planets: allPlanets,
+    })
+})
 // GET /planets/new
 app.get('/planets/new', async (req, res) => {
     const allPlanets = await Planet.find({})
