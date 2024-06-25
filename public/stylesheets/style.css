@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
 
 body {
-    background: #f7f4ef;
+    background: #c9c7c4;
     font-family: "Sniglet", sans-serif;
     display: flex;
     flex-direction: column;
@@ -14,12 +14,48 @@ nav {
     justify-content: center;
 }
 
-  h1 {
+h1 {
     color: #000000;
     font-size: 3.6em;
   }
 
-  footer {
+button {
+    background: #000000;
+    border-radius: 999px;
+    box-shadow: #000000 0 10px 20px -10px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-family: "Sniglet", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 24px;
+    opacity: 1;
+    outline: 0 solid transparent;
+    padding: 8px 18px;
+    margin: 10px;
+    width: fit-content;
+    border: 10px;
+}
+
+a:link {
+    color: currentColor;
+    text-decoration-line: none;
+
+}
+
+a:visited {
+    color: currentColor;
+    text-decoration-line: none;
+    
+}
+
+a:hover {
+    color: rgb(88, 99, 248);
+    text-decoration-line: none;
+
+}
+
+footer {
     font-size: 0.7em;
     position: fixed;
     left: 0;
@@ -43,7 +79,6 @@ nav {
   .navBarText {
     display: flex;
     justify-content: center;
-    width: 100%;
     font-weight: 600;
   }
 
@@ -54,4 +89,10 @@ nav {
     padding: 10px;
 }
 
-  
+#add:hover {
+    color: rgb(88, 99, 248);
+}
+
+#delete:hover {
+    color: rgb(88, 99, 248);
+}
