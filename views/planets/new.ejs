@@ -5,11 +5,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Create a planet!</title>
   </head>
   <body>
-    <h1>Add a new Planet!</h1>
+    <h1>Welcome to the Planets app!</h1>
     <%- include('../partials/nav') %>  
+    <h2>Fill out the form below to add a planet to our list!</h2>
     <div id="form">
       <form action="/planets" method="POST">
           <label for="name">Name:</label>
